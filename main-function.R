@@ -4,11 +4,6 @@
 ## 12/7/11. Tieming
 ##
 ##
-
-
-setwd("/Users/Tieming/research/proj2/manuscript-10-9-11-simulation-prob-models/Approximate-Posterior")
-
-
 ##
 ## Simulation starts here.
 ##
@@ -63,11 +58,11 @@ for (sim.time in 1:sim.total){
   seed <- seed + sim.time
   
   ## simulate. 
-  source("/Users/Tieming/research/proj2/manuscript-10-9-11-simulation-prob-models/Approximate-Posterior/sim_function.R")
+  source("sim_function.R")
   simd  <- sim(para=sim.para, I=3, J=J0, seed=seed)
 
   ## estimate.
-  source("/Users/Tieming/research/proj2/manuscript-10-9-11-simulation-prob-models/Approximate-Posterior/empirical_estimate_function.R")
+  source("empirical_estimate_function.R")
   estd  <- estimate(simd, alpha.obs=simd$alpha.hat, 
                       delta.obs=simd$delta.hat,
                       s2.ej.obs=simd$s2.ej.obs,
